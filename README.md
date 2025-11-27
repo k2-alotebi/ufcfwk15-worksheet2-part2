@@ -6,47 +6,45 @@
 
 ## Overview
 
-This project implements keyboard input handling through interrupts, an input buffer API, and a basic terminal interface for the Tiny OS. The implementation follows Chapter 6 of the OS Development handbook, focusing on interrupt handling and basic I/O operations.
+This undertaking incorporates the management of keyboard input via interrupts, an input buffer API, and a simple terminal interface for Tiny OS. The realization is in accord with Chapter 6 of the OS Development handbook, where interrupt handling and basic I/O operations are being dealt with.
 
 ## Project Structure
 
 ```
 worksheet2-part2/
 ├── drivers/
-│   ├── types.h                    # Type definitions
-│   ├── io.h, io.s                 # I/O port functions
-│   ├── pic.h, pic.c               # Programmable Interrupt Controller
-│   ├── interrupts.h                # Interrupt structures
-│   ├── interrupts.c                # Interrupt handler implementation
-│   ├── interrupt_handlers.s        # IDT loader
-│   ├── interrupt_asm.s             # Interrupt handler stubs
-│   ├── hardware_interrupt_enabler.h, .s  # Enable/disable interrupts
-│   ├── keyboard.h, keyboard.c      # Keyboard driver
-│   ├── frame_buffer.h, frame_buffer.c    # Framebuffer driver
-│   ├── input_buffer.h, input_buffer.c    # Input buffer API (Task 2)
-│   └── terminal.h, terminal.c     # Terminal implementation (Task 3)
+│   ├── types.h                   
+│   ├── io.h, io.s                
+│   ├── pic.h, pic.c               
+│   ├── interrupts.h               
+│   ├── interrupts.c              
+│   ├── interrupt_handlers.s        
+│   ├── interrupt_asm.s            
+│   ├── hardware_interrupt_enabler.h, .s 
+│   ├── keyboard.h, keyboard.c       
+│   ├── frame_buffer.h, frame_buffer.c     
+│   ├── input_buffer.h, input_buffer.c     
+│   └── terminal.h, terminal.c     
 ├── source/
-│   ├── loader.asm                 # Boot loader
-│   ├── kmain.c                    # Main kernel function
-│   └── link.ld                    # Linker script
+│   ├── loader.asm                
+│   ├── kmain.c                    
+│   └── link.ld                   
 ├── iso/boot/grub/
-│   ├── menu.lst                   # GRUB configuration
-│   └── stage2_eltorito            # GRUB bootloader
-└── Makefile                       # Build configuration
+│   ├── menu.lst                   
+│   └── stage2_eltorito           
+└── Makefile                     
 ```
 
 ## Task 1: Display Keyboard Input (20%)
 
 ### Implementation
 
-The keyboard input is handled through interrupt 33 (IRQ1 remapped to 0x21). When a key is pressed, the keyboard controller sends an interrupt, which is processed by our interrupt handler.
-
+The processing of keyboard input takes place via interrupt 33 (IRQ1 changed to 0x21). A key press causes the keyboard controller to emit an interrupt, our interrupt handler then takes care of it.
 #### Key Components
 
 **1. PIC (Programmable Interrupt Controller) Setup**
 
-The PIC is remapped to avoid conflicts with CPU exceptions:
-
+PIC was remapped to avoid conflict with CPU exception:
 ```c
 void pic_remap(s32int offset1, s32int offset2) {
     // Initialize PICs
@@ -73,7 +71,7 @@ void pic_remap(s32int offset1, s32int offset2) {
 
 **2. Interrupt Descriptor Table (IDT)**
 
-The IDT is set up to handle keyboard interrupts:
+IDT is set up to handle keyboard interrupts:
 
 ```c
 void interrupts_install_idt() {
@@ -158,8 +156,7 @@ u8int keyboard_scan_code_to_ascii(u8int scan_code) {
 
 ### Implementation
 
-The input buffer API provides functions to read characters from the keyboard buffer that was populated by the interrupt handler.
-
+The input buffer API offers some facilities in the built-in API to read characters from the keyboard buffer that was maintained for propagation by the interrupt handler mechanism.
 #### Key Functions
 
 **1. `getc()` - Read Single Character**
@@ -504,7 +501,7 @@ quit
 
 ### Interrupt Handling Flow
 
-1. Keyboard key pressed → Hardware generates IRQ1
+1. Keyboard key pressed -> Hardware generates IRQ1
 2. PIC remaps IRQ1 to interrupt 33 (0x21)
 3. CPU looks up interrupt 33 in IDT
 4. Jumps to `interrupt_handler_33` (assembly stub)
