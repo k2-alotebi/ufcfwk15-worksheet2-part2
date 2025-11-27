@@ -268,7 +268,8 @@ if (len > 0) {
 
 ### Screenshots
 
-<img width="502" height="382" alt="Screenshot 2025-11-27 043213" src="https://github.com/user-attachments/assets/e119d058-cd50-45d1-a2fd-b24bb9da4be0" />
+<img width="1132" height="72" alt="image" src="https://github.com/user-attachments/assets/ed5a7e5a-3ac9-4273-921f-dae945bb6541" />
+<img width="1124" height="671" alt="image" src="https://github.com/user-attachments/assets/eeb6ad49-3a91-4170-8d33-b14312452f69" />
 
 
 ---
