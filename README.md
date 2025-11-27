@@ -147,10 +147,10 @@ u8int keyboard_scan_code_to_ascii(u8int scan_code) {
 -  Input buffer for future use
 
 ### Screenshots
+<img width="754" height="206" alt="Screenshot 2025-11-27 041339" src="https://github.com/user-attachments/assets/e9da047f-bc1d-48a1-b0b2-610ec47e934e" />
+<img width="733" height="231" alt="Screenshot 2025-11-27 041345" src="https://github.com/user-attachments/assets/a72ab989-bc9a-45fd-9a98-8dabb7f550a0" />
+<img width="649" height="270" alt="Screenshot 2025-11-27 041437" src="https://github.com/user-attachments/assets/8f9dfc81-016f-47ab-83b6-8976be2b91db" />
 
-*[Screenshot 1: Keyboard input working - showing typed text]*
-*[Screenshot 2: Backspace deleting characters]*
-*[Screenshot 3: Enter creating new lines]*
 
 ---
 
@@ -268,8 +268,8 @@ if (len > 0) {
 
 ### Screenshots
 
-*[Screenshot 1: Testing readline() - showing "You typed: hello" and "Length: 5"]*
-*[Screenshot 2: Testing with longer input]*
+<img width="502" height="382" alt="Screenshot 2025-11-27 043213" src="https://github.com/user-attachments/assets/e119d058-cd50-45d1-a2fd-b24bb9da4be0" />
+
 
 ---
 
@@ -452,11 +452,9 @@ void terminal_run(void) {
 
 ### Screenshots
 
-*[Screenshot 1: Terminal showing "myos>" prompt]*
-*[Screenshot 2: help command output]*
-*[Screenshot 3: echo command working]*
-*[Screenshot 4: version command]*
-*[Screenshot 5: Unknown command error handling]*
+<img width="722" height="547" alt="Screenshot 2025-11-27 043955" src="https://github.com/user-attachments/assets/06e6c6af-ad20-40c2-8ffc-90e8db70702a" />
+and this after the clear
+<img width="637" height="149" alt="Screenshot 2025-11-27 044012" src="https://github.com/user-attachments/assets/1f2698d1-3349-472a-8369-a112da3d7f60" />
 
 ---
 
