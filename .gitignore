@@ -1,0 +1,7 @@
+*.o
+*.elf
+*.iso
+*.log
+logQ.txt
+serial.log
+iso/boot/kernel.elf
